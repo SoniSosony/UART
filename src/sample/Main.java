@@ -6,6 +6,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import javax.comm.CommPortIdentifier;
+import java.util.Enumeration;
+
 public class Main extends Application {
 
     @Override
