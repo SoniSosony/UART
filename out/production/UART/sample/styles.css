@@ -1,0 +1,9 @@
+#hbox_com {
+    -fx-border-color: black;
+    -fx-padding: 5;
+    -fx-spacing: 5;
+}
+
+.pane {
+    -fx-background-color: #8fbc8f;
+}
