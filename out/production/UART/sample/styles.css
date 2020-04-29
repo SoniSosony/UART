@@ -1,3 +1,7 @@
+#mainGridPane {
+    -fx-hgap: 10;
+}
+
 #gridPaneCom {
     -fx-border-color: #939598;
     -fx-padding: 4;
@@ -16,6 +20,10 @@
 #gridPaneParity {
     -fx-border-color: #939598;
     -fx-padding: 4;
+}
+
+#gridPaneFlowControl {
+    -fx-border-color: #939598;
 }
 
 .button {
