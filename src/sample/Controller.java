@@ -52,15 +52,6 @@ public class Controller {
                 isConnect = false;
                 connectButton.setText("Connect");
             } else {
-//                if (readThread != null) {
-//                    Set<Thread> setOfThread = Thread.getAllStackTraces().keySet();
-//                    for (Thread thread : setOfThread) {
-//                        if (thread.getId() == readThread.getId())
-//                            System.out.println("Thread found");
-//                        thread.interrupt();
-//                    }
-//                }
-
                 System.out.println("Connecting...");
                 portList = CommPortIdentifier.getPortIdentifiers();
                 CommPortIdentifier portId;

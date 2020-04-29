@@ -1,5 +1,27 @@
-#grid_pane_com {
+#gridPaneCom {
     -fx-border-color: #939598;
-    -fx-padding: 5;
-    -fx-spacing: 0;
+    -fx-padding: 4;
+}
+
+#gridPaneBaudRate {
+    -fx-border-color: #939598;
+    -fx-padding: 4;
+}
+
+#gridPaneDataBits {
+    -fx-border-color: #939598;
+    -fx-padding: 4;
+}
+
+#gridPaneParity {
+    -fx-border-color: #939598;
+    -fx-padding: 4;
+}
+
+.button {
+    -fx-font: 11 arial;
+}
+
+#comboBoxPorts {
+    -fx-font: 11 arial;
 }
