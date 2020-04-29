@@ -2,13 +2,22 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ComboBox?>
 <GridPane fx:controller="sample.Controller" xmlns:fx="http://javax.com/fxml"
           stylesheets="@styles.css">
     <padding>
         <Insets top="10" left="10"/>
     </padding>
-        <VBox id="hbox_com">
-            <Button text="Connect" prefWidth="70"/>
-            <Button text="Scan" prefWidth="70"/>
-        </VBox>
+    <Label alignment="CENTER" text="COM port" prefWidth="80" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+    <GridPane id="grid_pane_com" GridPane.rowIndex="1" GridPane.columnIndex="0" gridLinesVisible="false"
+                hgap="10" vgap="10">
+        <Button fx:id="connectButton" text="Connect" prefWidth="70" GridPane.rowIndex="0"
+                GridPane.columnIndex="0" onAction="#onButtonClicked"/>
+        <Button fx:id="scanButton" text="Scan" prefWidth="70" GridPane.rowIndex="1"
+                GridPane.columnIndex="0" onAction="#onButtonClicked"/>
+        <ComboBox fx:id="comboBoxPorts" GridPane.rowIndex="0" GridPane.columnIndex="1" prefWidth="70">
+
+        </ComboBox>
+    </GridPane>
 </GridPane>

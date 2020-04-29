@@ -1,9 +1,5 @@
-#hbox_com {
-    -fx-border-color: black;
+#grid_pane_com {
+    -fx-border-color: #939598;
     -fx-padding: 5;
-    -fx-spacing: 5;
-}
-
-.pane {
-    -fx-background-color: #8fbc8f;
+    -fx-spacing: 0;
 }
