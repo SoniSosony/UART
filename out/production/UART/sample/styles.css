@@ -5,6 +5,8 @@
 #gridPaneCom {
     -fx-border-color: #939598;
     -fx-padding: 4;
+    -fx-hgap: 10;
+    -fx-vgap: 5;
 }
 
 #gridPaneBaudRate {
@@ -24,6 +26,13 @@
 
 #gridPaneFlowControl {
     -fx-border-color: #939598;
+    -fx-padding: 4;
+}
+
+#gridPaneStopBits {
+    -fx-border-color: #939598;
+    -fx-padding: 4;
+    -fx-hgap: 44;
 }
 
 .button {

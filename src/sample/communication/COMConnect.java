@@ -4,18 +4,16 @@ import javax.comm.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Enumeration;
-import java.util.Set;
+import java.util.Map;
 import java.util.TooManyListenersException;
 
 public class COMConnect implements Runnable, SerialPortEventListener {
 
     static Enumeration portList;
-
     InputStream inputStream;
-
     SerialPort serialPort;
-
     Thread readThread;
+    private CommPortIdentifier portId;
 
     public Thread getReadThread() {
         return readThread;
@@ -25,11 +23,8 @@ public class COMConnect implements Runnable, SerialPortEventListener {
         return serialPort;
     }
 
-    public void setSerialPort(SerialPort serialPort) {
-        this.serialPort = serialPort;
-    }
-
-    public COMConnect(CommPortIdentifier portId) {
+    public COMConnect(CommPortIdentifier portId, Map<String, Integer> serialPortParameters) {
+        this.portId = portId;
         try {
             serialPort = (SerialPort) portId.open("COMConnectApp", 2000);
         } catch (PortInUseException e) {
@@ -44,9 +39,11 @@ public class COMConnect implements Runnable, SerialPortEventListener {
         }
         serialPort.notifyOnDataAvailable(true);
         try {
-            serialPort.setSerialPortParams(9600, SerialPort.DATABITS_8, SerialPort.STOPBITS_1,
-                    SerialPort.PARITY_NONE);
-        } catch (UnsupportedCommOperationException e) {
+            setSerialParams(serialPortParameters.get("baudRate"),serialPortParameters.get("dataBits"),
+                    serialPortParameters.get("stopBits"), serialPortParameters.get("parity"),
+                    serialPortParameters.get("flowControl"));
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         readThread = new Thread(this);
         readThread.start();
@@ -56,6 +53,15 @@ public class COMConnect implements Runnable, SerialPortEventListener {
         try {
             Thread.sleep(20000);
         } catch (InterruptedException e) {
+        }
+    }
+
+    public void setSerialParams(int baudRate, int dataBits, int stopBits, int parity,
+                                 int flowControl) throws Exception {
+        try {
+            serialPort.setSerialPortParams(baudRate, dataBits, stopBits,
+                    0);
+        } catch (UnsupportedCommOperationException e) {
         }
     }
 

@@ -12,8 +12,7 @@
         <Insets top="10" bottom="10" left="10" right="10"/>
     </padding>
     <Label alignment="CENTER" text="COM port" prefWidth="180" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
-    <GridPane id="gridPaneCom" GridPane.rowIndex="1" GridPane.columnIndex="0" gridLinesVisible="false"
-                hgap="10" vgap="5">
+    <GridPane id="gridPaneCom" GridPane.rowIndex="1" GridPane.columnIndex="0" gridLinesVisible="false">
         <Button fx:id="connectButton" text="Connect" prefWidth="80" GridPane.rowIndex="0"
                 GridPane.columnIndex="0" onAction="#onButtonClicked"/>
         <Button fx:id="scanButton" text="Scan"  prefWidth="80" GridPane.rowIndex="1"
@@ -28,20 +27,34 @@
         <fx:define>
             <ToggleGroup fx:id="baudRateToggleGroup"/>
         </fx:define>
-        <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="0" text="600" toggleGroup="$baudRateToggleGroup"/>
-        <RadioButton GridPane.rowIndex="1" GridPane.columnIndex="0" text="1200" toggleGroup="$baudRateToggleGroup"/>
-        <RadioButton GridPane.rowIndex="2" GridPane.columnIndex="0" text="2400" toggleGroup="$baudRateToggleGroup"/>
-        <RadioButton GridPane.rowIndex="3" GridPane.columnIndex="0" text="4800" toggleGroup="$baudRateToggleGroup"/>
-        <RadioButton GridPane.rowIndex="4" GridPane.columnIndex="0" text="9600" toggleGroup="$baudRateToggleGroup" selected="true"/>
-        <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="1" text="14400" toggleGroup="$baudRateToggleGroup"/>
-        <RadioButton GridPane.rowIndex="1" GridPane.columnIndex="1" text="19200" toggleGroup="$baudRateToggleGroup"/>
-        <RadioButton GridPane.rowIndex="2" GridPane.columnIndex="1" text="28800" toggleGroup="$baudRateToggleGroup"/>
-        <RadioButton GridPane.rowIndex="3" GridPane.columnIndex="1" text="38400" toggleGroup="$baudRateToggleGroup"/>
-        <RadioButton GridPane.rowIndex="4" GridPane.columnIndex="1" text="56000" toggleGroup="$baudRateToggleGroup"/>
-        <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="2" text="57600" toggleGroup="$baudRateToggleGroup"/>
-        <RadioButton GridPane.rowIndex="1" GridPane.columnIndex="2" text="115200" toggleGroup="$baudRateToggleGroup"/>
-        <RadioButton GridPane.rowIndex="2" GridPane.columnIndex="2" text="128000" toggleGroup="$baudRateToggleGroup"/>
-        <RadioButton GridPane.rowIndex="3" GridPane.columnIndex="2" text="256000" toggleGroup="$baudRateToggleGroup"/>
+        <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="0" text="600"
+                     toggleGroup="$baudRateToggleGroup" onAction="#onRadioButtonClicked"/>
+        <RadioButton GridPane.rowIndex="1" GridPane.columnIndex="0" text="1200"
+                     toggleGroup="$baudRateToggleGroup" onAction="#onRadioButtonClicked"/>
+        <RadioButton GridPane.rowIndex="2" GridPane.columnIndex="0" text="2400"
+                     toggleGroup="$baudRateToggleGroup" onAction="#onRadioButtonClicked"/>
+        <RadioButton GridPane.rowIndex="3" GridPane.columnIndex="0" text="4800"
+                     toggleGroup="$baudRateToggleGroup" onAction="#onRadioButtonClicked"/>
+        <RadioButton GridPane.rowIndex="4" GridPane.columnIndex="0" text="9600"
+                     toggleGroup="$baudRateToggleGroup" onAction="#onRadioButtonClicked" selected="true"/>
+        <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="1" text="14400"
+                     toggleGroup="$baudRateToggleGroup" onAction="#onRadioButtonClicked"/>
+        <RadioButton GridPane.rowIndex="1" GridPane.columnIndex="1" text="19200"
+                     toggleGroup="$baudRateToggleGroup" onAction="#onRadioButtonClicked"/>
+        <RadioButton GridPane.rowIndex="2" GridPane.columnIndex="1" text="28800"
+                     toggleGroup="$baudRateToggleGroup" onAction="#onRadioButtonClicked"/>
+        <RadioButton GridPane.rowIndex="3" GridPane.columnIndex="1" text="38400"
+                     toggleGroup="$baudRateToggleGroup" onAction="#onRadioButtonClicked"/>
+        <RadioButton GridPane.rowIndex="4" GridPane.columnIndex="1" text="56000"
+                     toggleGroup="$baudRateToggleGroup" onAction="#onRadioButtonClicked"/>
+        <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="2" text="57600"
+                     toggleGroup="$baudRateToggleGroup" onAction="#onRadioButtonClicked"/>
+        <RadioButton GridPane.rowIndex="1" GridPane.columnIndex="2" text="115200"
+                     toggleGroup="$baudRateToggleGroup" onAction="#onRadioButtonClicked"/>
+        <RadioButton GridPane.rowIndex="2" GridPane.columnIndex="2" text="128000"
+                     toggleGroup="$baudRateToggleGroup" onAction="#onRadioButtonClicked"/>
+        <RadioButton GridPane.rowIndex="3" GridPane.columnIndex="2" text="256000"
+                     toggleGroup="$baudRateToggleGroup" onAction="#onRadioButtonClicked"/>
     </GridPane>
 
     <Label alignment="CENTER" text="Data bits" prefWidth="180" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
@@ -50,10 +63,14 @@
         <fx:define>
             <ToggleGroup fx:id="dataBitsToggleGroup"/>
         </fx:define>
-        <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="0" text="5" toggleGroup="$dataBitsToggleGroup"/>
-        <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="1" text="6" toggleGroup="$dataBitsToggleGroup"/>
-        <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="2" text="7" toggleGroup="$dataBitsToggleGroup"/>
-        <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="3" text="8" toggleGroup="$dataBitsToggleGroup" selected="true"/>
+        <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="0" text="5"
+                     toggleGroup="$dataBitsToggleGroup" onAction="#onRadioButtonClicked"/>
+        <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="1" text="6"
+                     toggleGroup="$dataBitsToggleGroup" onAction="#onRadioButtonClicked"/>
+        <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="2" text="7"
+                     toggleGroup="$dataBitsToggleGroup" onAction="#onRadioButtonClicked"/>
+        <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="3" text="8"
+                     toggleGroup="$dataBitsToggleGroup"  onAction="#onRadioButtonClicked" selected="true"/>
     </GridPane>
     <Label alignment="CENTER" text="Parity" prefWidth="180" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
     <GridPane id="gridPaneParity" GridPane.rowIndex="7" GridPane.columnIndex="0"
@@ -61,23 +78,46 @@
         <fx:define>
             <ToggleGroup fx:id="parityToggleGroup"/>
         </fx:define>
-        <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="0" text="none" toggleGroup="$parityToggleGroup" selected="true"/>
-        <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="1" text="odd" toggleGroup="$parityToggleGroup"/>
-        <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="2" text="even" toggleGroup="$parityToggleGroup"/>
-        <RadioButton GridPane.rowIndex="1" GridPane.columnIndex="0" text="mark" toggleGroup="$parityToggleGroup"/>
-        <RadioButton GridPane.rowIndex="1" GridPane.columnIndex="1" text="space" toggleGroup="$parityToggleGroup"/>
+        <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="0" text="none" userData="0"
+                     toggleGroup="$parityToggleGroup" onAction="#onRadioButtonClicked" selected="true"/>
+        <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="1" text="odd" userData="1"
+                     toggleGroup="$parityToggleGroup" onAction="#onRadioButtonClicked"/>
+        <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="2" text="even" userData="2"
+                     toggleGroup="$parityToggleGroup" onAction="#onRadioButtonClicked"/>
+        <RadioButton GridPane.rowIndex="1" GridPane.columnIndex="0" text="mark" userData="3"
+                     toggleGroup="$parityToggleGroup" onAction="#onRadioButtonClicked"/>
+        <RadioButton GridPane.rowIndex="1" GridPane.columnIndex="1" text="space" userData="4"
+                     toggleGroup="$parityToggleGroup" onAction="#onRadioButtonClicked"/>
     </GridPane>
-    <Label alignment="CENTER" text="Flow control" prefWidth="180" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
-    <GridPane id="gridPaneFlowControl" GridPane.rowIndex="9" GridPane.columnIndex="0"
+    <Label alignment="CENTER" text="Stop bits" prefWidth="180" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+    <GridPane id="gridPaneStopBits" GridPane.rowIndex="9" GridPane.columnIndex="0"
+              hgap="20" vgap="5">
+        <fx:define>
+            <ToggleGroup fx:id="stopBitsToggleGroup"/>
+        </fx:define>
+        <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="0" text="1" userData="1"
+                     toggleGroup="$stopBitsToggleGroup" onAction="#onRadioButtonClicked" selected="true"/>
+        <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="1" text="1.5" userData="3" prefWidth="40"
+                     toggleGroup="$stopBitsToggleGroup" onAction="#onRadioButtonClicked"/>
+        <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="2" text="2" userData="2"
+                     toggleGroup="$stopBitsToggleGroup" onAction="#onRadioButtonClicked"/>
+    </GridPane>
+    <Label alignment="CENTER" text="Flow control" prefWidth="180" GridPane.rowIndex="10" GridPane.columnIndex="0"/>
+    <GridPane id="gridPaneFlowControl" GridPane.rowIndex="11" GridPane.columnIndex="0"
               hgap="20" vgap="5">
         <fx:define>
             <ToggleGroup fx:id="flowControlToggleGroup"/>
         </fx:define>
-        <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="0" text="none" toggleGroup="$flowControlToggleGroup" selected="true"/>
-        <RadioButton GridPane.rowIndex="1" GridPane.columnIndex="0" text="RTS/CTS in" toggleGroup="$flowControlToggleGroup"/>
-        <RadioButton GridPane.rowIndex="2" GridPane.columnIndex="0" text="RTS/CTS out" toggleGroup="$flowControlToggleGroup"/>
-        <RadioButton GridPane.rowIndex="3" GridPane.columnIndex="0" text="XON/XOFF in" toggleGroup="$flowControlToggleGroup"/>
-        <RadioButton GridPane.rowIndex="4" GridPane.columnIndex="0" text="XON/XOFF out" toggleGroup="$flowControlToggleGroup"/>
+        <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="0" text="none" userData="0"
+                     toggleGroup="$flowControlToggleGroup" selected="true"/>
+        <RadioButton GridPane.rowIndex="1" GridPane.columnIndex="0" text="RTS/CTS in" userData="1"
+                     toggleGroup="$flowControlToggleGroup" onAction="#onRadioButtonClicked"/>
+        <RadioButton GridPane.rowIndex="2" GridPane.columnIndex="0" text="RTS/CTS out" userData="2"
+                     toggleGroup="$flowControlToggleGroup" onAction="#onRadioButtonClicked"/>
+        <RadioButton GridPane.rowIndex="3" GridPane.columnIndex="0" text="XON/XOFF in" userData="4"
+                     toggleGroup="$flowControlToggleGroup" onAction="#onRadioButtonClicked"/>
+        <RadioButton GridPane.rowIndex="4" GridPane.columnIndex="0" text="XON/XOFF out" userData="8"
+                     toggleGroup="$flowControlToggleGroup" onAction="#onRadioButtonClicked"/>
     </GridPane>
     <Label alignment="CENTER" text="Transit" prefWidth="300" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
     <TextArea GridPane.rowIndex="1" GridPane.columnIndex="1" prefWidth="300" prefHeight="200" />
