@@ -15,7 +15,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("UART");
-        primaryStage.setScene(new Scene(root, 620, 540));
+        primaryStage.setScene(new Scene(root, 820, 540));
         primaryStage.show();
     }
 
